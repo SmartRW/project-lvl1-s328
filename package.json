@@ -1,8 +1,12 @@
 {
   "name": "brain-games-rmakarov",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "hexlet training project: console game",
+  "keywords": [
+    "hexlet",
+    "console game"
+  ],
+  "main": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "babel-node": "babel-node",
@@ -10,7 +14,7 @@
     "prepublishOnly": "npm run build"
   },
   "bin": {
-     "brain-games": "dist/bin/brain-games.js"
+    "brain-games": "dist/bin/brain-games.js"
   },
   "files": [
     "dist"
@@ -25,7 +29,9 @@
     "url": "https://github.com/SmartRW/project-lvl1-s328/issues"
   },
   "homepage": "https://github.com/SmartRW/project-lvl1-s328#readme",
-  "dependencies": {},
+  "dependencies": {
+    "readline-sync": "^1.4.9"
+  },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
