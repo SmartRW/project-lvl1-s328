@@ -19,38 +19,33 @@ const checkParity = num => num % 2 === 0;
 // const checkMaxPoints = (currentPoints, maxPoints) => currentPoints === maxPoints;
 
 export const playBrainEven = (name) => {
-  const num = generateNumber();
-  const getAnswer = () => {
+  const checkAnswer = () => {
+    const num = generateNumber();
     console.log(`Question: ${num}`);
     const answer = readlineSync.question('Your answer: ');
-    return answer === 'yes' || answer === 'no' ? answer : false;
-  };
-  const validateAnswer = (number, answer) => {
-    if (!answer) {
-      return false;
-    }
-    if (checkParity(number) && answer === 'yes') {
+    if (checkParity(num) && answer === 'yes') {
       return true;
     }
-    if (!checkParity(number) && answer === 'no') {
+    if (!checkParity(num) && answer === 'no') {
       return true;
     }
     return false;
   };
+
   const countPoints = (counter) => {
     let points = counter;
 
     if (points === 3) {
       console.log(`You win, ${name}!`);
-      return;
+      return 1;
     }
 
-    if (validateAnswer(num, getAnswer())) {
+    if (checkAnswer()) {
       points += 1;
+      console.log(`points: ${points}`);
     }
 
     return countPoints(points);
   };
-
   return countPoints(0);
 };
