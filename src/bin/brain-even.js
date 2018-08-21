@@ -1,10 +1,10 @@
 import {
-  sayHello, welcome, listBrainEvenRules, playBrainEven
+  sayHello, welcome, listBrainEvenRules, playBrainEven,
 } from '..';
 
 welcome();
-listBrainEvenRules();
-
+sayHello();
 const name = sayHello();
+listBrainEvenRules();
 
 playBrainEven(name);
