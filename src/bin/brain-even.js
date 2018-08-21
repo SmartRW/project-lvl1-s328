@@ -1,4 +1,6 @@
-import { sayHello, welcome, brainEvenRules, playBrainEven } from '..';
+import {
+  sayHello, welcome, brainEvenRules, playBrainEven
+} from '..';
 
 welcome();
 brainEvenRules();
