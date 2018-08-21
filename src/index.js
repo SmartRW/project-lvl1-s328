@@ -16,11 +16,11 @@ export const listBrainEvenRules = () => {
 
 const generateNumber = () => Math.floor(Math.random() * 100);
 const checkParity = num => num % 2 === 0;
-// const checkMaxPoints = (currentPoints, maxPoints) => currentPoints === maxPoints;
 
 export const playBrainEven = (name) => {
   const checkAnswer = () => {
     const num = generateNumber();
+    const correctAnswer = checkParity(num) ? 'yes' : 'no';
     console.log(`Question: ${num}`);
     const answer = readlineSync.question('Your answer: ');
     if (checkParity(num) && answer === 'yes') {
@@ -29,7 +29,7 @@ export const playBrainEven = (name) => {
     if (!checkParity(num) && answer === 'no') {
       return true;
     }
-    console.log(`'${answer}' is wrong answer ;(`);
+    console.log(`'${answer}' is wrong answer ;( Correct answer was '${correctAnswer}'`);
     return false;
   };
 
