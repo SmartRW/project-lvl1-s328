@@ -1,9 +1,9 @@
 import {
-  sayHello, welcome, brainEvenRules, playBrainEven
+  sayHello, welcome, listBrainEvenRules, playBrainEven
 } from '..';
 
 welcome();
-brainEvenRules();
+listBrainEvenRules();
 
 const name = sayHello();
 
