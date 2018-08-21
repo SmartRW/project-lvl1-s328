@@ -11,7 +11,7 @@ export const sayHello = () => {
 };
 
 export const listBrainEvenRules = () => {
-  console.log('Answer "yes" if number even otherwise answer "no"');
+  console.log('Answer "yes" if number even otherwise answer "no"\n');
 };
 
 const generateNumber = () => Math.floor(Math.random() * 100);
@@ -39,15 +39,16 @@ export const playBrainEven = (name) => {
   const countPoints = (counter) => {
     let points = counter;
 
-    if (points >= 3) {
-      console.log(`You win, ${name}!`);
-      return points;
-    }
-
     if (isAnswerCorrect()) {
+      console.log('Correct!');
       points += 1;
     } else {
       console.log(`Let's try again, ${name}!`);
+      return points;
+    }
+
+    if (points >= 3) {
+      console.log(`Congratulations, ${name}!`);
       return points;
     }
 
