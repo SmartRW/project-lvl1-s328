@@ -17,7 +17,7 @@ export const listBrainEvenRules = () => {
 const generateNumber = () => Math.floor(Math.random() * 100);
 const checkParity = num => num % 2 === 0;
 
-export const playBrainEven = (name) => {
+export const playBrainEven = (name = 'Vasya') => {
   const checkAnswer = () => {
     const num = generateNumber();
     const correctAnswer = checkParity(num) ? 'yes' : 'no';
