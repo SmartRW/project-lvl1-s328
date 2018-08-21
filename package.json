@@ -1,6 +1,6 @@
 {
   "name": "brain-games-rmakarov",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "hexlet training project: console game",
   "keywords": [
     "hexlet",
@@ -15,6 +15,7 @@
   },
   "bin": {
     "brain-games": "dist/bin/brain-games.js"
+    "brain-even": "dist/bin/brain-even.js"
   },
   "files": [
     "dist"
