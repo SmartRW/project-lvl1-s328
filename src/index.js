@@ -21,9 +21,10 @@ export const playBrainEven = (name) => {
   const isAnswerCorrect = () => {
     const num = generateNumber();
     const correctAnswer = isEven(num) ? 'yes' : 'no';
-    const answer = readlineSync.question('Your answer: ');
 
     console.log(`Question: ${num}`);
+
+    const answer = readlineSync.question('Your answer: ');
 
     if (isEven(num) && answer === 'yes') {
       return true;
