@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import {
   sayHello, welcome, listBrainEvenRules, playBrainEven,
 } from '..';
