@@ -15,18 +15,20 @@ export const listBrainEvenRules = () => {
 };
 
 const generateNumber = () => Math.floor(Math.random() * 100);
-const checkParity = num => num % 2 === 0;
+const isEven = num => num % 2 === 0;
 
-export const playBrainEven = (name = 'Vasya') => {
-  const checkAnswer = () => {
+export const playBrainEven = (name) => {
+  const isAnswerCorrect = () => {
     const num = generateNumber();
-    const correctAnswer = checkParity(num) ? 'yes' : 'no';
-    console.log(`Question: ${num}`);
+    const correctAnswer = isEven(num) ? 'yes' : 'no';
     const answer = readlineSync.question('Your answer: ');
-    if (checkParity(num) && answer === 'yes') {
+
+    console.log(`Question: ${num}`);
+
+    if (isEven(num) && answer === 'yes') {
       return true;
     }
-    if (!checkParity(num) && answer === 'no') {
+    if (!isEven(num) && answer === 'no') {
       return true;
     }
     console.log(`'${answer}' is wrong answer ;( Correct answer was '${correctAnswer}'`);
@@ -36,14 +38,13 @@ export const playBrainEven = (name = 'Vasya') => {
   const countPoints = (counter) => {
     let points = counter;
 
-    if (points === 3) {
+    if (points >= 3) {
       console.log(`You win, ${name}!`);
       return points;
     }
 
-    if (checkAnswer()) {
+    if (isAnswerCorrect()) {
       points += 1;
-      console.log(`points: ${points}`);
     } else {
       console.log(`Let's try again, ${name}!`);
       return points;
