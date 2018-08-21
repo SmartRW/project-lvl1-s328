@@ -17,25 +17,25 @@ export const listBrainEvenRules = () => {
 const generateNumber = () => Math.floor(Math.random() * 100);
 const isEven = num => num % 2 === 0;
 
+const isAnswerCorrect = () => {
+  const num = generateNumber();
+  const correctAnswer = isEven(num) ? 'yes' : 'no';
+
+  console.log(`Question: ${num}`);
+
+  const answer = readlineSync.question('Your answer: ');
+
+  if (isEven(num) && answer === 'yes') {
+    return true;
+  }
+  if (!isEven(num) && answer === 'no') {
+    return true;
+  }
+  console.log(`'${answer}' is wrong answer ;( Correct answer was '${correctAnswer}'`);
+  return false;
+};
+
 export const playBrainEven = (name) => {
-  const isAnswerCorrect = () => {
-    const num = generateNumber();
-    const correctAnswer = isEven(num) ? 'yes' : 'no';
-
-    console.log(`Question: ${num}`);
-
-    const answer = readlineSync.question('Your answer: ');
-
-    if (isEven(num) && answer === 'yes') {
-      return true;
-    }
-    if (!isEven(num) && answer === 'no') {
-      return true;
-    }
-    console.log(`'${answer}' is wrong answer ;( Correct answer was '${correctAnswer}'`);
-    return false;
-  };
-
   const countPoints = (counter) => {
     let points = counter;
 
