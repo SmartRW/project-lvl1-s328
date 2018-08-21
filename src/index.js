@@ -45,6 +45,7 @@ export const playBrainEven = (name) => {
       console.log(`points: ${points}`);
     } else {
       console.log(`Let's try again, ${name}!`);
+      return points;
     }
 
     return countPoints(points);

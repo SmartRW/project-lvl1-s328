@@ -3,7 +3,7 @@ import {
 } from '..';
 
 welcome();
-const name = sayHello();
 listBrainEvenRules();
+const name = sayHello();
 
 playBrainEven(name);
