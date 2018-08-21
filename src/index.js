@@ -29,7 +29,7 @@ export const playBrainEven = (name) => {
     if (!checkParity(num) && answer === 'no') {
       return true;
     }
-    console.log(`'${answer}' is wrong answer ;( Let's try again, ${name}!`);
+    console.log(`'${answer}' is wrong answer ;(`);
     return false;
   };
 
@@ -43,6 +43,8 @@ export const playBrainEven = (name) => {
     if (checkAnswer()) {
       points += 1;
       console.log(`points: ${points}`);
+    } else {
+      return `Let's try again, ${name}!`;
     }
 
     return countPoints(points);
