@@ -3,7 +3,6 @@ import {
 } from '..';
 
 welcome();
-sayHello();
 const name = sayHello();
 listBrainEvenRules();
 
