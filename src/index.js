@@ -38,6 +38,7 @@ export const playBrainEven = (name) => {
 
     if (points === 3) {
       console.log(`You win, ${name}!`);
+      return points;
     }
 
     if (checkAnswer()) {
