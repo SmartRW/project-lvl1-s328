@@ -31,7 +31,7 @@ const gameRound = (player, currentRound, roundsToWin) => {
     return;
   }
 
-  gameRound(player, currentRound + 1);
+  gameRound(player, currentRound + 1, roundsToWin);
 };
 
 export const playBrainGames = () => {
@@ -43,5 +43,5 @@ export const playBrainEven = () => {
   sayWelcome();
   console.log('Answer "yes" if number even otherwise answer "no"\n');
   const name = getPlayersName();
-  return gameRound(name, 1, 3);
+  gameRound(name, 1, 3);
 };
