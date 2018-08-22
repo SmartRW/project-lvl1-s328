@@ -27,15 +27,9 @@ const makeQuestion = () => {
   return num;
 };
 
-const getAnswer = () => readlineSync.question('Your answer: ');
-const getCorrectAnswer = number => (isEven(number) ? 'yes' : 'no');
-const isAnswerCorrect = (number, answer) => number === answer;
 const displayYouLoose = (answer, correctAnswer, player) => {
   console.log(`'${answer}' is wrong answer ;( Correct answer was '${correctAnswer}'`);
   console.log(`Let's try again, ${player}!`);
-};
-const displayYouWin = (player) => {
-  console.log(`Congratulations, ${player}!`);
 };
 
 export const playBrainEven = () => {
@@ -43,25 +37,24 @@ export const playBrainEven = () => {
   listBrainEvenRules();
   const name = getPlayersName();
   const pointsToWin = 3;
-  let points = 0;
   const gameRound = (player, earnedPoints) => {
     const number = makeQuestion();
-    const answer = getAnswer();
-    const correctAnswer = getCorrectAnswer(number);
+    const answer = readlineSync.question('Your answer: ');
+    const correctAnswer = (isEven(number) ? 'yes' : 'no');
 
-    if (!isAnswerCorrect(correctAnswer, answer)) {
-      displayYouLoose(answer, correctAnswer, name);
-      return false;
+    if (answer === correctAnswer) {
+      console.log('Correct!');
+    } else {
+      console.log(`'${answer}' is wrong answer ;( Correct answer was '${correctAnswer}'`);
+      console.log(`Let's try again, ${player}!`);
+      return;
     }
 
-    console.log('Correct!');
-    points += 1;
-
-    if (points >= pointsToWin) {
-      displayYouWin(name);
-      return true;
+    if (earnedPoints >= pointsToWin) {
+      console.log(`Congratulations, ${name}!`);
+      return;
     }
     return gameRound(player, earnedPoints + 1);
   };
-  return gameRound(name, points);
+  return gameRound(name, 0);
 };
