@@ -17,11 +17,6 @@ export const playBrainGames = () => {
 
 const generateNumber = () => Math.floor(Math.random() * 100);
 const isEven = num => num % 2 === 0;
-const makeQuestion = () => {
-  const num = generateNumber();
-  console.log(`Question: ${num}`);
-  return num;
-};
 
 export const playBrainEven = () => {
   sayWelcome();
@@ -29,7 +24,8 @@ export const playBrainEven = () => {
   const name = getPlayersName();
   const roundsToWin = 3;
   const gameRound = (player, currentRound) => {
-    const number = makeQuestion();
+    const number = generateNumber();
+    console.log(`Question: ${number}`);
     const answer = readlineSync.question('Your answer: ');
     const correctAnswer = (isEven(number) ? 'yes' : 'no');
     if (answer === correctAnswer) {
