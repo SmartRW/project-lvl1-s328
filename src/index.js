@@ -1,58 +1,60 @@
 import readlineSync from 'readline-sync';
 
-export const welcome = () => {
+const sayWelcome = () => {
   console.log('Welcome to the Brain Games!\n');
 };
 
-export const sayHello = () => {
-  const askforName = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${askforName}`);
-  return askforName;
+const getPlayersName = () => {
+  const name = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${name}`);
+  return name;
 };
 
-export const listBrainEvenRules = () => {
+export const playBrainGames = () => {
+  sayWelcome();
+  getPlayersName();
+};
+
+const listBrainEvenRules = () => {
   console.log('Answer "yes" if number even otherwise answer "no"\n');
 };
 
 const generateNumber = () => Math.floor(Math.random() * 100);
 const isEven = num => num % 2 === 0;
-
-const isAnswerCorrect = () => {
+const makeQuestion = () => {
   const num = generateNumber();
-  const correctAnswer = isEven(num) ? 'yes' : 'no';
-
   console.log(`Question: ${num}`);
-
-  const answer = readlineSync.question('Your answer: ');
-
-  if (isEven(num) && answer === 'yes') {
-    return true;
-  }
-  if (!isEven(num) && answer === 'no') {
-    return true;
-  }
-  console.log(`'${answer}' is wrong answer ;( Correct answer was '${correctAnswer}'`);
-  return false;
+  return num;
 };
 
-export const playBrainEven = (name) => {
-  const countPoints = (counter) => {
-    let points = counter;
+const getAnswer = () => readlineSync.question('Your answer: ');
+const getCorrectAnswer = number => (isEven(number) ? 'yes' : 'no');
+const isAnswerCorrect = (number, answer) => number === answer;
 
-    if (isAnswerCorrect()) {
-      console.log('Correct!');
-      points += 1;
-    } else {
-      console.log(`Let's try again, ${name}!`);
+export const playBrainEven = () => {
+  sayWelcome();
+  listBrainEvenRules();
+  const name = getPlayersName();
+  const winPoints = 3;
+  let points = 0;
+  const gameRound = (player, totalPoints) => {
+    const number = makeQuestion();
+    const answer = getAnswer();
+    const correctAnswer = getCorrectAnswer(number);
+
+    if (winPoints === points) {
+      console.log(`Congratulations, ${player}!`);
       return points;
     }
 
-    if (points >= 3) {
-      console.log(`Congratulations, ${name}!`);
-      return points;
+    if (!isAnswerCorrect(correctAnswer, answer)) {
+      console.log(`'${answer}' is wrong answer ;( Correct answer was '${correctAnswer}'`);
+      console.log(`Let's try again, ${player}!`);
+      return false;
     }
-
-    return countPoints(points);
+    console.log('Correct!');
+    points += 1;
+    return gameRound(player, totalPoints + 1);
   };
-  return countPoints(0);
+  return gameRound(name, points);
 };
