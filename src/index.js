@@ -31,24 +31,25 @@ export const playBrainEven = () => {
   sayWelcome();
   listBrainEvenRules();
   const name = getPlayersName();
-  const pointsToWin = 3;
-  const gameRound = (player, earnedPoints) => {
+  const roundsToWin = 3;
+  const gameRound = (player, round) => {
     const number = makeQuestion();
     const answer = readlineSync.question('Your answer: ');
     const correctAnswer = (isEven(number) ? 'yes' : 'no');
     if (answer === correctAnswer) {
       console.log('Correct!');
-      if (earnedPoints >= pointsToWin) {
-        console.log(`Congratulations, ${name}!`);
-        return;
-      }
     } else {
       console.log(`'${answer}' is wrong answer ;( Correct answer was '${correctAnswer}'`);
       console.log(`Let's try again, ${player}!`);
       return;
     }
 
-    gameRound(player, earnedPoints + 1);
+    if (round >= roundsToWin) {
+      console.log(`Congratulations, ${name}!`);
+      return;
+    }
+
+    gameRound(player, round + 1);
   };
-  return gameRound(name, 0);
+  return gameRound(name, 1);
 };
