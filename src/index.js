@@ -51,10 +51,12 @@ export const playBrainEven = () => {
 
     if (points >= pointsToWin) {
       displayYouWin(name);
+      return true;
     }
 
     if (!isAnswerCorrect(correctAnswer, answer)) {
       displayYouLoose(answer, correctAnswer, name);
+      return false;
     }
     console.log('Correct!');
     points += 1;
