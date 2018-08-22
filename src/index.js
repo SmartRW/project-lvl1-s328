@@ -54,7 +54,8 @@ export const playBrainEven = () => {
       console.log(`Congratulations, ${name}!`);
       return;
     }
-    return gameRound(player, earnedPoints + 1);
+
+    gameRound(player, earnedPoints + 1);
   };
   return gameRound(name, 0);
 };
