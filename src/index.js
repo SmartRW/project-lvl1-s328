@@ -15,10 +15,6 @@ export const playBrainGames = () => {
   getPlayersName();
 };
 
-const listBrainEvenRules = () => {
-  console.log('Answer "yes" if number even otherwise answer "no"\n');
-};
-
 const generateNumber = () => Math.floor(Math.random() * 100);
 const isEven = num => num % 2 === 0;
 const makeQuestion = () => {
@@ -29,7 +25,7 @@ const makeQuestion = () => {
 
 export const playBrainEven = () => {
   sayWelcome();
-  listBrainEvenRules();
+  console.log('Answer "yes" if number even otherwise answer "no"\n');
   const name = getPlayersName();
   const roundsToWin = 3;
   const gameRound = (player, currentRound) => {
