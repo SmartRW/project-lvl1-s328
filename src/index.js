@@ -36,16 +36,12 @@ export const playBrainEven = () => {
     const number = makeQuestion();
     const answer = readlineSync.question('Your answer: ');
     const correctAnswer = (isEven(number) ? 'yes' : 'no');
-    if (earnedPoints >= pointsToWin) {
-      console.log(`Congratulations, ${name}!`);
-      return;
-    }
     if (answer === correctAnswer) {
       console.log('Correct!');
-      // if (earnedPoints >= pointsToWin) {
-      //   console.log(`Congratulations, ${name}!`);
-      //   return;
-      // }
+      if (earnedPoints >= pointsToWin) {
+        console.log(`Congratulations, ${name}!`);
+        return;
+      }
     } else {
       console.log(`'${answer}' is wrong answer ;( Correct answer was '${correctAnswer}'`);
       console.log(`Let's try again, ${player}!`);
