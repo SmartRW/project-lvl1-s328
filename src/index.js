@@ -32,7 +32,7 @@ export const playBrainEven = () => {
   listBrainEvenRules();
   const name = getPlayersName();
   const roundsToWin = 3;
-  const gameRound = (player, round) => {
+  const gameRound = (player, currentRound) => {
     const number = makeQuestion();
     const answer = readlineSync.question('Your answer: ');
     const correctAnswer = (isEven(number) ? 'yes' : 'no');
@@ -44,12 +44,12 @@ export const playBrainEven = () => {
       return;
     }
 
-    if (round >= roundsToWin) {
+    if (currentRound >= roundsToWin) {
       console.log(`Congratulations, ${name}!`);
       return;
     }
 
-    gameRound(player, round + 1);
+    gameRound(player, currentRound + 1);
   };
   return gameRound(name, 1);
 };
