@@ -49,17 +49,18 @@ export const playBrainEven = () => {
     const answer = getAnswer();
     const correctAnswer = getCorrectAnswer(number);
 
-    if (points >= pointsToWin) {
-      displayYouWin(name);
-      return true;
-    }
-
     if (!isAnswerCorrect(correctAnswer, answer)) {
       displayYouLoose(answer, correctAnswer, name);
       return false;
     }
+
     console.log('Correct!');
     points += 1;
+
+    if (points >= pointsToWin) {
+      displayYouWin(name);
+      return true;
+    }
     return gameRound(player, earnedPoints + 1);
   };
   return gameRound(name, points);
