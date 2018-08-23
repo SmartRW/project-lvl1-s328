@@ -26,8 +26,9 @@ const playBrainCalc = () => {
   console.log('Welcome to the Brain Games!\n');
   console.log('What is the result of the expression?\n');
   const name = getPlayersName();
-
-  gameRound(generateBrainCalcConditions, name, 1, 3);
+  const currentRound = 1;
+  const roundsToWin = 3;
+  gameRound(generateBrainCalcConditions, name, currentRound, roundsToWin);
 };
 
 export default playBrainCalc;

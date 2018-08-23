@@ -11,8 +11,9 @@ export const generateNumber = () => Math.floor(Math.random() * 10);
 export const isEven = num => num % 2 === 0;
 
 export const gameRound = (gameConditions, player, currentRound, roundsToWin) => {
-  const question = car(gameConditions());
-  const correctAnswer = cdr(gameConditions());
+  const conditions = gameConditions();
+  const question = car(conditions);
+  const correctAnswer = cdr(conditions);
   console.log(`Question: ${question}`);
   const answer = readlineSync.question('Your answer: ');
   if (answer === correctAnswer) {

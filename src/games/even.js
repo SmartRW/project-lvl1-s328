@@ -13,8 +13,10 @@ const generateBrainEvenConditions = () => {
 const playBrainEven = () => {
   console.log('Welcome to the Brain Games!\n');
   console.log('Answer "yes" if number even otherwise answer "no"\n');
+  const currentRound = 1;
+  const roundsToWin = 3;
   const name = getPlayersName();
-  gameRound(generateBrainEvenConditions, name, 1, 3);
+  gameRound(generateBrainEvenConditions, name, currentRound, roundsToWin);
 };
 
 export default playBrainEven;
