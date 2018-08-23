@@ -1,11 +1,13 @@
 import {
   getPlayersName, gameRound, isEven, generateNumber,
 } from '..';
+import { pair } from 'pairs';
 
 const generateBrainEvenConditions = () => {
   const number = generateNumber();
-  console.log(`Question: ${number}`);
-  return (isEven(number) ? 'yes' : 'no');
+  const correctAnswer = isEven(number) ? 'yes' : 'no';
+  const question = number;
+  return pair(question, correctAnswer);
 };
 
 const playBrainEven = () => {

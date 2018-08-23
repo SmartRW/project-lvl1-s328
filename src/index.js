@@ -1,4 +1,5 @@
 import readlineSync from 'readline-sync';
+import { pair, car, cdr } from 'pairs';
 
 export const getPlayersName = () => {
   const name = readlineSync.question('May I have your name? ');
