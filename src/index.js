@@ -45,3 +45,45 @@ export const playBrainEven = () => {
   const name = getPlayersName();
   gameRound(name, 1, 3);
 };
+
+const generateQuestion = () => {
+  const makeOperandChoice = () => Math.floor(Math.random() * 3) + 1;
+  const firstNumber = generateNumber();
+  const secondNumber = generateNumber();
+
+  if (makeOperandChoice === 1) {
+    console.log(`Question: ${firstNumber} + ${secondNumber}`);
+    return (firstNumber + secondNumber);
+  } if (makeOperandChoice === 2) {
+    console.log(`Question: ${firstNumber} x ${secondNumber}`);
+    return (firstNumber * secondNumber);
+  }
+  console.log(`Question: ${firstNumber} - ${secondNumber}`);
+  return (firstNumber - secondNumber);
+};
+
+export const playBrainCalc = () => {
+  sayWelcome();
+  console.log('What is the result of the expression?\n');
+  const name = getPlayersName();
+  const anotherGameRound = (player, currentRound, roundsToWin) => {
+    const correctAnswer = generateQuestion();
+    const answer = readlineSync.question('Your answer: ');
+
+    if (answer === correctAnswer) {
+      console.log('Correct!');
+    } else {
+      console.log(`'${answer}' is wrong answer ;( Correct answer was '${correctAnswer}'`);
+      console.log(`Let's try again, ${player}!`);
+      return;
+    }
+
+    if (currentRound >= roundsToWin) {
+      console.log(`Congratulations, ${player}!`);
+      return;
+    }
+
+    gameRound(player, currentRound + 1, roundsToWin);
+  };
+  anotherGameRound(name, 1, 3);
+};
