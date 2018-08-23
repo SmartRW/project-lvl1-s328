@@ -1,7 +1,7 @@
 import {
   getPlayersName, gameRound, isEven, generateNumber,
 } from '..';
-import { pair } from 'pairs';
+import { pair } from 'hexlet-pairs';
 
 const generateBrainEvenConditions = () => {
   const number = generateNumber();

@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import { pair, car, cdr } from 'pairs';
+import { car, cdr } from 'hexlet-pairs';
 
 export const getPlayersName = () => {
   const name = readlineSync.question('May I have your name? ');
@@ -11,7 +11,9 @@ export const generateNumber = () => Math.floor(Math.random() * 10);
 export const isEven = num => num % 2 === 0;
 
 export const gameRound = (gameConditions, player, currentRound, roundsToWin) => {
-  const correctAnswer = gameConditions();
+  const question = car(gameConditions());
+  const correctAnswer = cdr(gameConditions());
+  console.log(`Question: ${question}`);
   const answer = readlineSync.question('Your answer: ');
   if (answer === correctAnswer) {
     console.log('Correct!');

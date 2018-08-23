@@ -1,4 +1,5 @@
 import { getPlayersName, gameRound, generateNumber } from '..';
+import { pair } from 'hexlet-pairs';
 
 export const generateBrainCalcConditions = () => {
   const operandsNumber = 3;
@@ -7,9 +8,9 @@ export const generateBrainCalcConditions = () => {
   const secondNumber = generateNumber();
 
   if (makeOperandChoice === 1) {
-    console.log(`Question: ${firstNumber} + ${secondNumber}`);
+    const question = `${firstNumber} + ${secondNumber}`;
     const correctAnswer = firstNumber + secondNumber;
-    return String(correctAnswer);
+    return pair(question, String(correctAnswer));
   }
   if (makeOperandChoice === 2) {
     console.log(`Question: ${firstNumber} x ${secondNumber}`);
