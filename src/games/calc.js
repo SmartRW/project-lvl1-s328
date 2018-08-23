@@ -4,8 +4,10 @@ import { cons } from 'hexlet-pairs';
 const generateBrainCalcConditions = () => {
   const operandsNumber = 3;
   const makeOperandChoice = Math.floor(Math.random() * operandsNumber) + 1;
-  const firstNumber = generateNumber();
-  const secondNumber = generateNumber();
+  const minNumber = 0;
+  const maxNumber = 10;
+  const firstNumber = generateNumber(minNumber, maxNumber);
+  const secondNumber = generateNumber(minNumber, maxNumber);
 
   if (makeOperandChoice === 1) {
     const question = `${firstNumber} + ${secondNumber}`;

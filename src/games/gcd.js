@@ -4,8 +4,10 @@ import {
 import { cons } from 'hexlet-pairs';
 
 const generateBrainGcdConditions = () => {
-  const num1 = generateNumber();
-  const num2 = generateNumber();
+  const minNumber = 1;
+  const maxNumber = 99;
+  const num1 = generateNumber(minNumber, maxNumber);
+  const num2 = generateNumber(minNumber, maxNumber);
   const correctAnswer = (num1 >= num2) ? findGCD(num1, num2) : findGCD(num2, num1);
   const question = `${num1} ${num2}`;
   return cons(question, String(correctAnswer));

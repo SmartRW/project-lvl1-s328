@@ -4,7 +4,9 @@ import {
 import { cons } from 'hexlet-pairs';
 
 const generateBrainEvenConditions = () => {
-  const number = generateNumber();
+  const minNumber = 1;
+  const maxNumber = 99;
+  const number = generateNumber(minNumber, maxNumber);
   const correctAnswer = isEven(number) ? 'yes' : 'no';
   const question = number;
   return cons(question, correctAnswer);

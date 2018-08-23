@@ -8,7 +8,7 @@ export const getPlayersName = () => {
 };
 
 // Generates random whole number from 1 to 99:
-export const generateNumber = () => Math.floor(Math.random() * 98) + 1;
+export const generateNumber = (min, max) => Math.floor(Math.random() * max - min + 1) + min;
 
 export const isEven = num => num % 2 === 0;
 
