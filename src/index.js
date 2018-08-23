@@ -13,11 +13,9 @@ const getPlayersName = () => {
 const generateNumber = () => Math.floor(Math.random() * 10);
 const isEven = num => num % 2 === 0;
 
-const gameRound = (player, currentRound, roundsToWin) => {
-  const number = generateNumber();
-  console.log(`Question: ${number}`);
+const gameRound = (gameConditions, player, currentRound, roundsToWin) => {
+  const correctAnswer = gameConditions();
   const answer = readlineSync.question('Your answer: ');
-  const correctAnswer = (isEven(number) ? 'yes' : 'no');
   if (answer === correctAnswer) {
     console.log('Correct!');
   } else {
@@ -39,14 +37,13 @@ export const playBrainGames = () => {
   getPlayersName();
 };
 
-export const playBrainEven = () => {
-  sayWelcome();
-  console.log('Answer "yes" if number even otherwise answer "no"\n');
-  const name = getPlayersName();
-  gameRound(name, 1, 3);
+const GenerateBrainEvenConditions = () => {
+  const number = generateNumber();
+  console.log(`Question: ${number}`);
+  return (isEven(number) ? 'yes' : 'no');
 };
 
-const generateQuestionReturnCorrectAnswer = () => {
+const GenerateBrainCalcConditions = () => {
   const makeOperandChoice = Math.floor(Math.random() * 3) + 1;
   const firstNumber = generateNumber();
   const secondNumber = generateNumber();
@@ -66,28 +63,17 @@ const generateQuestionReturnCorrectAnswer = () => {
   return correctAnswer;
 };
 
+export const playBrainEven = () => {
+  sayWelcome();
+  console.log('Answer "yes" if number even otherwise answer "no"\n');
+  const name = getPlayersName();
+  gameRound(GenerateBrainEvenConditions, name, 1, 3);
+};
+
 export const playBrainCalc = () => {
   sayWelcome();
   console.log('What is the result of the expression?\n');
   const name = getPlayersName();
-  const anotherGameRound = (player, currentRound, roundsToWin) => {
-    const correctAnswer = generateQuestionReturnCorrectAnswer();
-    const answer = parseInt(readlineSync.question('Your answer: '), 10);
 
-    if (answer === correctAnswer) {
-      console.log('Correct!');
-    } else {
-      console.log(`'${answer}' is wrong answer ;( Correct answer was '${correctAnswer}'`);
-      console.log(`Let's try again, ${player}!`);
-      return;
-    }
-
-    if (currentRound >= roundsToWin) {
-      console.log(`Congratulations, ${player}!`);
-      return;
-    }
-
-    anotherGameRound(player, currentRound + 1, roundsToWin);
-  };
-  anotherGameRound(name, 1, 3);
+  gameRound(GenerateBrainCalcConditions, name, 1, 3);
 };
