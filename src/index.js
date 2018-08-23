@@ -32,11 +32,6 @@ const gameRound = (gameConditions, player, currentRound, roundsToWin) => {
   gameRound(player, currentRound + 1, roundsToWin);
 };
 
-export const playBrainGames = () => {
-  sayWelcome();
-  getPlayersName();
-};
-
 const GenerateBrainEvenConditions = () => {
   const number = generateNumber();
   console.log(`Question: ${number}`);
@@ -50,17 +45,22 @@ const GenerateBrainCalcConditions = () => {
 
   if (makeOperandChoice === 1) {
     console.log(`Question: ${firstNumber} + ${secondNumber}`);
-    const correctAnswer = toString(firstNumber + secondNumber);
-    return correctAnswer;
+    const correctAnswer = firstNumber + secondNumber;
+    return toString(correctAnswer);
   }
   if (makeOperandChoice === 2) {
     console.log(`Question: ${firstNumber} x ${secondNumber}`);
-    const correctAnswer = toString(firstNumber * secondNumber);
-    return correctAnswer;
+    const correctAnswer = firstNumber * secondNumber;
+    return toString(correctAnswer);
   }
   console.log(`Question: ${firstNumber} - ${secondNumber}`);
-  const correctAnswer = toString(firstNumber - secondNumber);
-  return correctAnswer;
+  const correctAnswer = firstNumber - secondNumber;
+  return toString(correctAnswer);
+};
+
+export const playBrainGames = () => {
+  sayWelcome();
+  getPlayersName();
 };
 
 export const playBrainEven = () => {
