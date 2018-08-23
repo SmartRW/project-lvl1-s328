@@ -3,7 +3,7 @@ import {
 } from '..';
 import { cons } from 'hexlet-pairs';
 
-export const generateBrainGcdConditions = () => {
+const generateBrainGcdConditions = () => {
   const num1 = generateNumber();
   const num2 = generateNumber();
   const correctAnswer = (num1 >= num2) ? findGCD(num1, num2) : findGCD(num2, num1);
@@ -11,7 +11,7 @@ export const generateBrainGcdConditions = () => {
   return cons(question, String(correctAnswer));
 };
 
-export const playBrainGcd = () => {
+const playBrainGcd = () => {
   console.log('Welcome to the Brain Games!\n');
   console.log('Find the greatest common divisor of given numbers.\n');
   const name = getPlayersName();
@@ -19,3 +19,5 @@ export const playBrainGcd = () => {
   const roundsToWin = 3;
   gameRound(generateBrainGcdConditions, name, currentRound, roundsToWin);
 };
+
+export default playBrainGcd;

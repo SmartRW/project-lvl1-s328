@@ -1,7 +1,7 @@
 import { getPlayersName, gameRound, generateNumber } from '..';
 import { cons } from 'hexlet-pairs';
 
-export const generateBrainCalcConditions = () => {
+const generateBrainCalcConditions = () => {
   const operandsNumber = 3;
   const makeOperandChoice = Math.floor(Math.random() * operandsNumber) + 1;
   const firstNumber = generateNumber();
