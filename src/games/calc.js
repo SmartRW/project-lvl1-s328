@@ -7,23 +7,27 @@ const generateConditions = () => {
   const operandsNumber = 3;
   const makeOperandChoice = Math.floor(Math.random() * operandsNumber) + 1;
   const minNumber = 0;
-  const maxNumber = 10;
+  const maxNumber = 20;
   const firstNumber = generateNumber(minNumber, maxNumber);
   const secondNumber = generateNumber(minNumber, maxNumber);
 
-  if (makeOperandChoice === 1) {
-    const question = `${firstNumber} + ${secondNumber}`;
-    const correctAnswer = firstNumber + secondNumber;
-    return cons(question, String(correctAnswer));
+  switch (makeOperandChoice) {
+    case 1: {
+      const question = `${firstNumber} + ${secondNumber}`;
+      const correctAnswer = firstNumber + secondNumber;
+      return cons(question, String(correctAnswer));
+    }
+    case 2: {
+      const question = `${firstNumber} x ${secondNumber}`;
+      const correctAnswer = firstNumber * secondNumber;
+      return cons(question, String(correctAnswer));
+    }
+    default: {
+      const question = `${firstNumber} - ${secondNumber}`;
+      const correctAnswer = firstNumber - secondNumber;
+      return cons(question, String(correctAnswer));
+    }
   }
-  if (makeOperandChoice === 2) {
-    const question = `${firstNumber} x ${secondNumber}`;
-    const correctAnswer = firstNumber * secondNumber;
-    return cons(question, String(correctAnswer));
-  }
-  const question = `${firstNumber} - ${secondNumber}`;
-  const correctAnswer = firstNumber - secondNumber;
-  return cons(question, String(correctAnswer));
 };
 
 const playCalc = () => playGame(rules, generateConditions);
