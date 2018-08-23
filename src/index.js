@@ -50,16 +50,16 @@ const GenerateBrainCalcConditions = () => {
 
   if (makeOperandChoice === 1) {
     console.log(`Question: ${firstNumber} + ${secondNumber}`);
-    const correctAnswer = firstNumber + secondNumber;
+    const correctAnswer = toString(firstNumber + secondNumber);
     return correctAnswer;
   }
   if (makeOperandChoice === 2) {
     console.log(`Question: ${firstNumber} x ${secondNumber}`);
-    const correctAnswer = firstNumber * secondNumber;
+    const correctAnswer = toString(firstNumber * secondNumber);
     return correctAnswer;
   }
   console.log(`Question: ${firstNumber} - ${secondNumber}`);
-  const correctAnswer = firstNumber - secondNumber;
+  const correctAnswer = toString(firstNumber - secondNumber);
   return correctAnswer;
 };
 
