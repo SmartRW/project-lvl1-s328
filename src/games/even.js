@@ -1,13 +1,13 @@
 import {
   getPlayersName, gameRound, isEven, generateNumber,
 } from '..';
-import { pair } from 'hexlet-pairs';
+import { cons } from 'hexlet-pairs';
 
 const generateBrainEvenConditions = () => {
   const number = generateNumber();
   const correctAnswer = isEven(number) ? 'yes' : 'no';
   const question = number;
-  return pair(question, correctAnswer);
+  return cons(question, correctAnswer);
 };
 
 const playBrainEven = () => {

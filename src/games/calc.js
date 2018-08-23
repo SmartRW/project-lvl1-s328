@@ -1,5 +1,5 @@
 import { getPlayersName, gameRound, generateNumber } from '..';
-import { pair } from 'hexlet-pairs';
+import { cons } from 'hexlet-pairs';
 
 export const generateBrainCalcConditions = () => {
   const operandsNumber = 3;
@@ -10,16 +10,16 @@ export const generateBrainCalcConditions = () => {
   if (makeOperandChoice === 1) {
     const question = `${firstNumber} + ${secondNumber}`;
     const correctAnswer = firstNumber + secondNumber;
-    return pair(question, String(correctAnswer));
+    return cons(question, String(correctAnswer));
   }
   if (makeOperandChoice === 2) {
     const question = `${firstNumber} x ${secondNumber}`;
     const correctAnswer = firstNumber * secondNumber;
-    return pair(question, String(correctAnswer));
+    return cons(question, String(correctAnswer));
   }
   const question = `${firstNumber} - ${secondNumber}`;
   const correctAnswer = firstNumber - secondNumber;
-  return pair(question, String(correctAnswer));
+  return cons(question, String(correctAnswer));
 };
 
 const playBrainCalc = () => {
