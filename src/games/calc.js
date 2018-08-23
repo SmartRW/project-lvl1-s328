@@ -1,7 +1,9 @@
-import { getPlayersName, gameRound, generateNumber } from '..';
+import { generateNumber, playGame } from '..';
 import { cons } from 'hexlet-pairs';
 
-const generateBrainCalcConditions = () => {
+const rules = 'What is the result of the expression?\n';
+
+const generateConditions = () => {
   const operandsNumber = 3;
   const makeOperandChoice = Math.floor(Math.random() * operandsNumber) + 1;
   const minNumber = 0;
@@ -24,13 +26,6 @@ const generateBrainCalcConditions = () => {
   return cons(question, String(correctAnswer));
 };
 
-const playBrainCalc = () => {
-  console.log('Welcome to the Brain Games!\n');
-  console.log('What is the result of the expression?\n');
-  const name = getPlayersName();
-  const currentRound = 1;
-  const roundsToWin = 3;
-  gameRound(generateBrainCalcConditions, name, currentRound, roundsToWin);
-};
+const playCalc = playGame(rules, generateConditions);
 
-export default playBrainCalc;
+export default playCalc;
