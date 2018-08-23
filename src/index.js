@@ -72,9 +72,9 @@ export const playBrainCalc = () => {
   const name = getPlayersName();
   const anotherGameRound = (player, currentRound, roundsToWin) => {
     const correctAnswer = generateQuestionReturnCorrectAnswer();
-    const answer = readlineSync.question('Your answer: ');
+    const answer = parseInt(readlineSync.question('Your answer: '), 10);
 
-    if (+answer === correctAnswer) {
+    if (answer === correctAnswer) {
       console.log('Correct!');
     } else {
       console.log(`'${answer}' is wrong answer ;( Correct answer was '${correctAnswer}'`);
