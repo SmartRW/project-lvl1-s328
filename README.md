@@ -9,3 +9,5 @@ hexlet frontend-js 1st level project
 [![Build Status](https://travis-ci.org/SmartRW/project-lvl1-s328.svg?branch=master)](https://travis-ci.org/SmartRW/project-lvl1-s328)
 
 [![asciicast](https://asciinema.org/a/XuIygwgwa4vit7VmtmFdSEHYq.png)](https://asciinema.org/a/XuIygwgwa4vit7VmtmFdSEHYq)
+
+[![asciicast](https://asciinema.org/a/a7y4ZU6pFHuAp1AYRx98Dz5zo.png)](https://asciinema.org/a/a7y4ZU6pFHuAp1AYRx98Dz5zo)
