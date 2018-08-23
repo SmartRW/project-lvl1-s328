@@ -1,10 +1,10 @@
 import readlineSync from 'readline-sync';
 
-const sayWelcome = () => {
+export const sayWelcome = () => {
   console.log('Welcome to the Brain Games!\n');
 };
 
-const getPlayersName = () => {
+export const getPlayersName = () => {
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}`);
   return name;
@@ -13,7 +13,7 @@ const getPlayersName = () => {
 const generateNumber = () => Math.floor(Math.random() * 10);
 const isEven = num => num % 2 === 0;
 
-const gameRound = (gameConditions, player, currentRound, roundsToWin) => {
+export const gameRound = (gameConditions, player, currentRound, roundsToWin) => {
   const correctAnswer = gameConditions();
   const answer = readlineSync.question('Your answer: ');
   if (answer === correctAnswer) {
@@ -32,13 +32,13 @@ const gameRound = (gameConditions, player, currentRound, roundsToWin) => {
   gameRound(gameConditions, player, currentRound + 1, roundsToWin);
 };
 
-const GenerateBrainEvenConditions = () => {
+export const GenerateBrainEvenConditions = () => {
   const number = generateNumber();
   console.log(`Question: ${number}`);
   return (isEven(number) ? 'yes' : 'no');
 };
 
-const GenerateBrainCalcConditions = () => {
+export const GenerateBrainCalcConditions = () => {
   const makeOperandChoice = Math.floor(Math.random() * 3) + 1;
   const firstNumber = generateNumber();
   const secondNumber = generateNumber();
@@ -56,24 +56,4 @@ const GenerateBrainCalcConditions = () => {
   console.log(`Question: ${firstNumber} - ${secondNumber}`);
   const correctAnswer = firstNumber - secondNumber;
   return String(correctAnswer);
-};
-
-export const playBrainGames = () => {
-  sayWelcome();
-  getPlayersName();
-};
-
-export const playBrainEven = () => {
-  sayWelcome();
-  console.log('Answer "yes" if number even otherwise answer "no"\n');
-  const name = getPlayersName();
-  gameRound(GenerateBrainEvenConditions, name, 1, 3);
-};
-
-export const playBrainCalc = () => {
-  sayWelcome();
-  console.log('What is the result of the expression?\n');
-  const name = getPlayersName();
-
-  gameRound(GenerateBrainCalcConditions, name, 1, 3);
 };
