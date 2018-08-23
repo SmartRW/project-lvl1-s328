@@ -10,7 +10,7 @@ const findGCD = (a, b) => {
   return a > b ? findGCD(a % b, b) : findGCD(a, b % a);
 };
 
-const rules = 'Find the greatest common divisor of given numbers.';
+const rules = 'Find the greatest common divisor of given numbers.\n';
 
 const generateConditions = () => {
   const minNumber = 1;
