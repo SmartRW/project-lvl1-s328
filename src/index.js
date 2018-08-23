@@ -31,7 +31,7 @@ const playRound = (gameCondition, player, currentRound, roundsToWin) => {
     return;
   }
 
-  playRound(gameCondition, player, currentRound + 1);
+  playRound(gameCondition, player, currentRound + 1, roundsToWin);
 };
 
 // Runs process of each game:
