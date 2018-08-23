@@ -1,7 +1,8 @@
 import { getPlayersName, gameRound, generateNumber } from '..';
 
-export const GenerateBrainCalcConditions = () => {
-  const makeOperandChoice = Math.floor(Math.random() * 3) + 1;
+export const generateBrainCalcConditions = () => {
+  const operandsNumber = 3;
+  const makeOperandChoice = Math.floor(Math.random() * operandsNumber) + 1;
   const firstNumber = generateNumber();
   const secondNumber = generateNumber();
 
@@ -25,7 +26,7 @@ const playBrainCalc = () => {
   console.log('What is the result of the expression?\n');
   const name = getPlayersName();
 
-  gameRound(GenerateBrainCalcConditions, name, 1, 3);
+  gameRound(generateBrainCalcConditions, name, 1, 3);
 };
 
 export default playBrainCalc;
