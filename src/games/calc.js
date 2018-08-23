@@ -13,13 +13,13 @@ export const generateBrainCalcConditions = () => {
     return pair(question, String(correctAnswer));
   }
   if (makeOperandChoice === 2) {
-    console.log(`Question: ${firstNumber} x ${secondNumber}`);
+    const question = `${firstNumber} x ${secondNumber}`;
     const correctAnswer = firstNumber * secondNumber;
-    return String(correctAnswer);
+    return pair(question, String(correctAnswer));
   }
-  console.log(`Question: ${firstNumber} - ${secondNumber}`);
+  const question = `${firstNumber} - ${secondNumber}`;
   const correctAnswer = firstNumber - secondNumber;
-  return String(correctAnswer);
+  return pair(question, String(correctAnswer));
 };
 
 const playBrainCalc = () => {
