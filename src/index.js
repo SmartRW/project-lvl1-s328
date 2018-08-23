@@ -29,7 +29,7 @@ const gameRound = (gameConditions, player, currentRound, roundsToWin) => {
     return;
   }
 
-  gameRound(player, currentRound + 1, roundsToWin);
+  gameRound(gameConditions, player, currentRound + 1, roundsToWin);
 };
 
 const GenerateBrainEvenConditions = () => {
