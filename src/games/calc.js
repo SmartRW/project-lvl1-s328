@@ -26,6 +26,6 @@ const generateConditions = () => {
   return cons(question, String(correctAnswer));
 };
 
-const playCalc = playGame(rules, generateConditions);
+const playCalc = () => playGame(rules, generateConditions);
 
 export default playCalc;

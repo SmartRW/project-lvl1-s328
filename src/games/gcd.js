@@ -22,6 +22,6 @@ const generateConditions = () => {
   return cons(question, String(correctAnswer));
 };
 
-const playGcd = playGame(rules, generateConditions);
+const playGcd = () => playGame(rules, generateConditions);
 
 export default playGcd;

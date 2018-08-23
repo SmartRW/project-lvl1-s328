@@ -14,6 +14,6 @@ const generateConditions = () => {
   return cons(question, correctAnswer);
 };
 
-const playEven = playGame(rules, generateConditions);
+const playEven = () => playGame(rules, generateConditions);
 
 export default playEven;
