@@ -46,20 +46,24 @@ export const playBrainEven = () => {
   gameRound(name, 1, 3);
 };
 
-const generateQuestion = () => {
-  const makeOperandChoice = () => Math.floor(Math.random() * 3) + 1;
+const generateQuestionReturnCorrectAnswer = () => {
+  const makeOperandChoice = Math.floor(Math.random() * 3) + 1;
   const firstNumber = generateNumber();
   const secondNumber = generateNumber();
 
   if (makeOperandChoice === 1) {
     console.log(`Question: ${firstNumber} + ${secondNumber}`);
-    return (firstNumber + secondNumber);
-  } if (makeOperandChoice === 2) {
+    const correctAnswer = firstNumber + secondNumber;
+    return correctAnswer;
+  }
+  if (makeOperandChoice === 2) {
     console.log(`Question: ${firstNumber} x ${secondNumber}`);
-    return (firstNumber * secondNumber);
+    const correctAnswer = firstNumber * secondNumber;
+    return correctAnswer;
   }
   console.log(`Question: ${firstNumber} - ${secondNumber}`);
-  return (firstNumber - secondNumber);
+  const correctAnswer = firstNumber - secondNumber;
+  return correctAnswer;
 };
 
 export const playBrainCalc = () => {
@@ -67,7 +71,7 @@ export const playBrainCalc = () => {
   console.log('What is the result of the expression?\n');
   const name = getPlayersName();
   const anotherGameRound = (player, currentRound, roundsToWin) => {
-    const correctAnswer = generateQuestion();
+    const correctAnswer = generateQuestionReturnCorrectAnswer();
     const answer = readlineSync.question('Your answer: ');
 
     if (answer === correctAnswer) {
