@@ -7,17 +7,18 @@ export const getPlayersName = () => {
   return name;
 };
 
-// Generates random whole number from 1 to 10:
-export const generateNumber = () => Math.floor(Math.random() * 9) + 1;
+// Generates random whole number from 1 to 99:
+export const generateNumber = () => Math.floor(Math.random() * 98) + 1;
 
 export const isEven = num => num % 2 === 0;
 
 // Finds greatest common devisor of a and b:
 export const findGCD = (a, b) => {
-  if (a % b === 0) {
-    return b;
+  if (a === 0 || b === 0) {
+    return a + b;
   }
-  return findGCD(a % b, b);
+
+  return a > b ? findGCD(a % b, b) : findGCD(a, b % a);
 };
 
 export const gameRound = (gameConditions, player, currentRound, roundsToWin) => {
