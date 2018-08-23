@@ -10,7 +10,7 @@ const getPlayersName = () => {
   return name;
 };
 
-const generateNumber = () => Math.floor(Math.random() * 100);
+const generateNumber = () => Math.floor(Math.random() * 10);
 const isEven = num => num % 2 === 0;
 
 const gameRound = (player, currentRound, roundsToWin) => {
