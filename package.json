@@ -32,6 +32,7 @@
   },
   "homepage": "https://github.com/SmartRW/project-lvl1-s328#readme",
   "dependencies": {
+    "hexlet-pairs": "^1.0.8",
     "readline-sync": "^1.4.9"
   },
   "devDependencies": {
