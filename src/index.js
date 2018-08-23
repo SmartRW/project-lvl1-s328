@@ -87,7 +87,7 @@ export const playBrainCalc = () => {
       return;
     }
 
-    gameRound(player, currentRound + 1, roundsToWin);
+    anotherGameRound(player, currentRound + 1, roundsToWin);
   };
   anotherGameRound(name, 1, 3);
 };
