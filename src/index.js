@@ -21,9 +21,10 @@ const playRound = (gameCondition, currentRound, roundsToWin) => {
       return true;
     }
     playRound(gameCondition, currentRound + 1, roundsToWin);
+  } else {
+    console.log(`'${answer}' is wrong answer ;( Correct answer was '${correctAnswer}'`);
+    return false;
   }
-  console.log(`'${answer}' is wrong answer ;( Correct answer was '${correctAnswer}'`);
-  return false;
 };
 
 // Runs process of each game:
