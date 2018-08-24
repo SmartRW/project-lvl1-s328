@@ -1,14 +1,12 @@
 import readlineSync from 'readline-sync';
 import { car, cdr } from 'hexlet-pairs';
 
-// Gets player's name:
 const getPlayersName = () => {
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}`);
   return name;
 };
 
-// Recursivly plays rounds of each game:
 const playRound = (gameCondition, currentRound, roundsToWin) => {
   const condition = gameCondition();
   const question = car(condition);
@@ -30,7 +28,6 @@ const playRound = (gameCondition, currentRound, roundsToWin) => {
   return playRound(gameCondition, currentRound + 1, roundsToWin);
 };
 
-// Runs process of each game:
 const roundsToWin = 3;
 const currentRound = 1;
 
