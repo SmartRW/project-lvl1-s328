@@ -35,11 +35,12 @@ const playRound = (gameCondition, player, currentRound, roundsToWin) => {
 };
 
 // Runs process of each game:
-export const playGame = (rules, condition) => {
+const roundsToWin = 3;
+const currentRound = 1;
+
+export const playGame = (rule, condition) => {
   console.log('Welcome to the Brain Games!\n');
-  console.log(rules);
+  console.log(`${rule}\n`);
   const name = getPlayersName();
-  const roundsToWin = 3;
-  const currentRound = 1;
   playRound(condition, name, currentRound, roundsToWin);
 };

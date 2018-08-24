@@ -3,17 +3,18 @@ import { cons } from 'hexlet-pairs';
 
 const isEven = num => num % 2 === 0;
 
-const rules = 'Answer "yes" if number even otherwise answer "no"\n';
+const rule = 'Answer "yes" if number even otherwise answer "no"';
 
-const generateConditions = () => {
-  const minNumber = 1;
-  const maxNumber = 99;
+const minNumber = 1;
+const maxNumber = 99;
+
+const generateCondition = () => {
   const number = generateNumber(minNumber, maxNumber);
   const correctAnswer = isEven(number) ? 'yes' : 'no';
   const question = number;
   return cons(question, correctAnswer);
 };
 
-const playEven = () => playGame(rules, generateConditions);
+const playEven = () => playGame(rule, generateCondition);
 
 export default playEven;

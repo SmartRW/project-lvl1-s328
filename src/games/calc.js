@@ -1,17 +1,18 @@
 import { generateNumber, playGame } from '..';
 import { cons } from 'hexlet-pairs';
 
-const rules = 'What is the result of the expression?\n';
+const rule = 'What is the result of the expression?';
 
-const generateConditions = () => {
-  const operandsNumber = 3;
-  const makeOperandChoice = Math.floor(Math.random() * operandsNumber) + 1;
-  const minNumber = 0;
-  const maxNumber = 20;
+const operandsNumber = 3;
+const minNumber = 0;
+const maxNumber = 20;
+
+const generateCondition = () => {
+  const choosenOperatopNumber = Math.floor(Math.random() * operandsNumber) + 1;
   const firstNumber = generateNumber(minNumber, maxNumber);
   const secondNumber = generateNumber(minNumber, maxNumber);
 
-  switch (makeOperandChoice) {
+  switch (choosenOperatopNumber) {
     case 1: {
       const question = `${firstNumber} + ${secondNumber}`;
       const correctAnswer = firstNumber + secondNumber;
@@ -30,6 +31,6 @@ const generateConditions = () => {
   }
 };
 
-const playCalc = () => playGame(rules, generateConditions);
+const playCalc = () => playGame(rule, generateCondition);
 
 export default playCalc;
