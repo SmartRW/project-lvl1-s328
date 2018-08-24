@@ -1,5 +1,4 @@
 import readlineSync from 'readline-sync';
-import generateNumber from 'utils';
 import { car, cdr } from 'hexlet-pairs';
 
 // Gets player's name:
