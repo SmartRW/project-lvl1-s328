@@ -34,7 +34,6 @@ const playGame = (rule, condition) => {
   const iter = () => {
     if (isRoundWon(condition)) {
       currentRound += 1;
-      console.log(`${currentRound}, ${roundsToWin}`);
       if (currentRound > roundsToWin) {
         console.log(`Congratulations, ${name}!`);
         return;
