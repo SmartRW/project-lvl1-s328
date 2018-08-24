@@ -1,13 +1,15 @@
-import { generateNumber, playGame } from '..';
+import playGame from '..';
+import generateNumber from '../utils';
 import { cons } from 'hexlet-pairs';
 
-const rules = 'What is the result of the expression?\n';
+const rules = 'What is the result of the expression?';
+
+const minNumber = 0;
+const maxNumber = 20;
+const operandsNumber = 3;
 
 const generateConditions = () => {
-  const operandsNumber = 3;
   const makeOperandChoice = Math.floor(Math.random() * operandsNumber) + 1;
-  const minNumber = 0;
-  const maxNumber = 20;
   const firstNumber = generateNumber(minNumber, maxNumber);
   const secondNumber = generateNumber(minNumber, maxNumber);
 

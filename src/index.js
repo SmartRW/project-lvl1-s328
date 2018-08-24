@@ -8,9 +8,6 @@ const getPlayersName = () => {
   return name;
 };
 
-// Generates random whole number from min to max:
-export const generateNumber = (min, max) => Math.floor(Math.random() * max - min + 1) + min;
-
 // Recursivly plays rounds of each game:
 const playRound = (gameCondition, player, currentRound, roundsToWin) => {
   const condition = gameCondition();
@@ -35,11 +32,14 @@ const playRound = (gameCondition, player, currentRound, roundsToWin) => {
 };
 
 // Runs process of each game:
-export const playGame = (rules, condition) => {
+const roundsToWin = 3;
+const currentRound = 1;
+
+const playGame = (gameRule, condition) => {
   console.log('Welcome to the Brain Games!\n');
-  console.log(rules);
+  console.log(`${gameRule}\n`);
   const name = getPlayersName();
-  const roundsToWin = 3;
-  const currentRound = 1;
   playRound(condition, name, currentRound, roundsToWin);
 };
+
+export default playGame;
