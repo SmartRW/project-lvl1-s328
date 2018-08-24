@@ -19,7 +19,7 @@ const maxNumber = 99;
 const generateConditions = () => {
   const num1 = generateNumber(minNumber, maxNumber);
   const num2 = generateNumber(minNumber, maxNumber);
-  const correctAnswer = (num1 >= num2) ? findGCD(num1, num2) : findGCD(num2, num1);
+  const correctAnswer = findGCD(num1, num2);
   const question = `${num1} ${num2}`;
   return cons(question, String(correctAnswer));
 };
