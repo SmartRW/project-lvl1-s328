@@ -8,8 +8,8 @@ const getPlayersName = () => {
   return name;
 };
 
-// Plays round and checks equality of player's answer and correct answer:
-const isRoundWon = (gameCondition) => {
+// Recursivly plays rounds of each game:
+const playRound = (gameCondition, player, currentRound, roundsToWin) => {
   const condition = gameCondition();
   const question = car(condition);
   const correctAnswer = cdr(condition);
@@ -17,33 +17,29 @@ const isRoundWon = (gameCondition) => {
   const answer = readlineSync.question('Your answer: ');
   if (answer === correctAnswer) {
     console.log('Correct!');
-    return true;
+  } else {
+    console.log(`'${answer}' is wrong answer ;( Correct answer was '${correctAnswer}'`);
+    console.log(`Let's try again, ${player}!`);
+    return;
   }
-  console.log(`'${answer}' is wrong answer ;( Correct answer was '${correctAnswer}'`);
-  return false;
+
+  if (currentRound >= roundsToWin) {
+    console.log(`Congratulations, ${player}!`);
+    return;
+  }
+
+  playRound(gameCondition, player, currentRound + 1, roundsToWin);
 };
 
 // Runs process of each game:
 const roundsToWin = 3;
-let currentRound = 1;
+const currentRound = 1;
 
-const playGame = (rule, condition) => {
+const playGame = (gameRule, condition) => {
   console.log('Welcome to the Brain Games!\n');
-  console.log(`${rule}\n`);
+  console.log(`${gameRule}\n`);
   const name = getPlayersName();
-  const iter = () => {
-    if (isRoundWon(condition)) {
-      currentRound += 1;
-      if (currentRound > roundsToWin) {
-        console.log(`Congratulations, ${name}!`);
-        return;
-      }
-      iter();
-    } else {
-      console.log(`Let's try again, ${name}!`);
-    }
-  };
-  iter();
+  playRound(condition, name, currentRound, roundsToWin);
 };
 
 export default playGame;
