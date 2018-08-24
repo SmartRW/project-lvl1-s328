@@ -1,4 +1,5 @@
 import readlineSync from 'readline-sync';
+import generateNumber from 'utils';
 import { car, cdr } from 'hexlet-pairs';
 
 // Gets player's name:
@@ -8,11 +9,8 @@ const getPlayersName = () => {
   return name;
 };
 
-// Generates random whole number from min to max:
-export const generateNumber = (min, max) => Math.floor(Math.random() * max - min + 1) + min;
-
 // Recursivly plays rounds of each game:
-const playRound = (gameCondition, player, currentRound, roundsToWin) => {
+const playRound = (gameCondition, currentRound, roundsToWin) => {
   const condition = gameCondition();
   const question = car(condition);
   const correctAnswer = cdr(condition);
@@ -20,27 +18,27 @@ const playRound = (gameCondition, player, currentRound, roundsToWin) => {
   const answer = readlineSync.question('Your answer: ');
   if (answer === correctAnswer) {
     console.log('Correct!');
-  } else {
-    console.log(`'${answer}' is wrong answer ;( Correct answer was '${correctAnswer}'`);
-    console.log(`Let's try again, ${player}!`);
-    return;
+    if (currentRound >= roundsToWin) {
+      return true;
+    }
+    playRound(gameCondition, currentRound + 1, roundsToWin);
   }
-
-  if (currentRound >= roundsToWin) {
-    console.log(`Congratulations, ${player}!`);
-    return;
-  }
-
-  playRound(gameCondition, player, currentRound + 1, roundsToWin);
+  return false;
 };
 
 // Runs process of each game:
 const roundsToWin = 3;
 const currentRound = 1;
 
-export const playGame = (rule, condition) => {
+const playGame = (rule, condition) => {
   console.log('Welcome to the Brain Games!\n');
   console.log(`${rule}\n`);
   const name = getPlayersName();
-  playRound(condition, name, currentRound, roundsToWin);
+  if (playRound(condition, currentRound, roundsToWin)) {
+    console.log(`Congratulations, ${name}!`);
+  } else {
+    console.log(`Let's try again, ${name}!`);
+  }
 };
+
+export default playGame;
