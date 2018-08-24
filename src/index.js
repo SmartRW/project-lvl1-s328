@@ -14,7 +14,7 @@ const playRound = (gameCondition, currentRound, roundsToWin) => {
   const question = car(condition);
   const correctAnswer = cdr(condition);
 
-  if (currentRound >= roundsToWin) {
+  if (currentRound > roundsToWin) {
     return true;
   }
 
