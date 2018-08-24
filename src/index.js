@@ -8,8 +8,8 @@ const getPlayersName = () => {
   return name;
 };
 
-// Recursivly plays rounds of each game:
-const playRound = (gameCondition) => {
+// Plays round and checks equality of player's answer and correct answer:
+const isRoundWon = (gameCondition) => {
   const condition = gameCondition();
   const question = car(condition);
   const correctAnswer = cdr(condition);
@@ -32,10 +32,10 @@ const playGame = (rule, condition) => {
   console.log(`${rule}\n`);
   const name = getPlayersName();
   const iter = () => {
-    if (playRound(condition)) {
+    if (isRoundWon(condition)) {
       currentRound += 1;
       console.log(`${currentRound}, ${roundsToWin}`);
-      if (currentRound >= roundsToWin) {
+      if (currentRound > roundsToWin) {
         console.log(`Congratulations, ${name}!`);
         return;
       }
