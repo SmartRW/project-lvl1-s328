@@ -43,14 +43,8 @@ const playGame = (rule, condition) => {
     } else {
       console.log(`Let's try again, ${name}!`);
     }
-    iter();
   };
-
-  if (playRound(condition)) {
-    console.log(`Congratulations, ${name}!`);
-  } else {
-    console.log(`Let's try again, ${name}!`);
-  }
+  iter();
 };
 
 export default playGame;
