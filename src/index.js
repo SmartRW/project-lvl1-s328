@@ -22,6 +22,7 @@ const playRound = (gameCondition, currentRound, roundsToWin) => {
     }
     playRound(gameCondition, currentRound + 1, roundsToWin);
   }
+  console.log(`'${answer}' is wrong answer ;( Correct answer was '${correctAnswer}'`);
   return false;
 };
 
