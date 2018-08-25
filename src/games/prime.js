@@ -5,18 +5,18 @@ import { cons } from 'hexlet-pairs';
 const gameRule = 'Is this number prime?';
 
 const isPrime = (num) => {
-  const iter = (number, devisor) => {
-    if (devisor > num / 2) {
+  const iter = (number, divisor) => {
+    if (divisor > num / 2) {
       return true;
     }
-    if (num % devisor === 0) {
+    if (num % divisor === 0) {
       return false;
     }
 
-    return isPrime(num, devisor + 1);
+    return isPrime(num, divisor + 1);
   };
-  const minDevisor = 2;
-  return iter(num, minDevisor);
+  const minDivisor = 2;
+  return iter(num, minDivisor);
 };
 
 const minNumber = 1;
