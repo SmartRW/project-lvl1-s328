@@ -6,14 +6,15 @@ const gameRule = 'What number is missing in this progression?';
 
 const startItemMin = 1;
 const startItemMax = 9;
-const startItem = generateNumber(startItemMin, startItemMax);
+
 const progressionLength = 10;
-const hiddenItemIndex = generateNumber(0, progressionLength - 1);
 const minStep = 1;
 const maxStep = 9;
-const progressionStep = generateNumber(minStep, maxStep);
 
 const generateCondition = () => {
+  const progressionStep = generateNumber(minStep, maxStep);
+  const startItem = generateNumber(startItemMin, startItemMax);
+  const hiddenItemIndex = generateNumber(0, progressionLength - 1);
   let question = '';
   const hiddenItem = startItem + (hiddenItemIndex * progressionStep);
   const correctAnswer = String(hiddenItem);
