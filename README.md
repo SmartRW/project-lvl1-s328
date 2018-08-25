@@ -27,3 +27,11 @@ hexlet frontend-js 1st level project
 ## Play Brain Balance
 
 [![asciicast](https://asciinema.org/a/Zqh13IY58o9475Iq3MYyDw39w.png)](https://asciinema.org/a/Zqh13IY58o9475Iq3MYyDw39w)
+
+## Play Brain Progression
+
+[![asciicast](https://asciinema.org/a/X5fuc9q6LUGg3Qrhk0U6rcfZZ.png)](https://asciinema.org/a/X5fuc9q6LUGg3Qrhk0U6rcfZZ)
+
+## Play Brain Prime
+
+[![asciicast](https://asciinema.org/a/QPh7iWAkG0w1IFoTYUW11iY8R.png)](https://asciinema.org/a/QPh7iWAkG0w1IFoTYUW11iY8R)
