@@ -38,7 +38,8 @@ const makeString = (numeral, count) => {
   return `${numeral}${makeString(numeral, count - 1)}`;
 };
 
-const balanceNum = (str) => {
+const balanceNum = (num) => {
+  const str = String(num);
   const len = str.length;
   const sum = sumOfNumerals(str);
   const minNum = Math.floor(sum / len);
