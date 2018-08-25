@@ -18,9 +18,10 @@ const maxNumber = 99;
 const generateCondition = () => {
   const num1 = generateNumber(minNumber, maxNumber);
   const num2 = generateNumber(minNumber, maxNumber);
-  const correctAnswer = findGCD(num1, num2);
+  const correctAnswerAsNum = findGCD(num1, num2);
+  const correctAnswer = String(correctAnswerAsNum);
   const question = `${num1} ${num2}`;
-  return cons(question, String(correctAnswer));
+  return cons(question, correctAnswer);
 };
 
 const playGcd = () => playGame(gameRule, generateCondition);

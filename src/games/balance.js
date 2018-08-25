@@ -4,55 +4,50 @@ import { cons } from 'hexlet-pairs';
 
 const gameRule = 'Balance the given number.';
 
-const findMinNum = (num) => {
-  const str = String(num);
-  let smallestNumber = str[0];
-  for (let i = 1; i <= str.length - 1; i += 1) {
-    if (str[i] < smallestNumber) {
-      smallestNumber = str[i];
-    }
-  }
-  return smallestNumber;
-};
-
-const makeBase = (num, len) => {
-  let str = '';
-  for (let i = 1; i <= len; i += 1) {
-    str = `${str}${num}`;
-  }
-  return Number(str);
-};
-
-const calculatePoints = (num1, num2) => {
-  const diff = `${num2 - num1}`;
+const sumOfNumerals = (str) => {
   let sum = 0;
-  for (let i = 0; i < diff.length; i += 1) {
-    sum += Number(diff[i]);
+  for (let i = 0; i < str.length; i += 1) {
+    sum += Number(str[i]);
   }
   return sum;
 };
+// ver. 1
+// const balanceNum = (str) => {
+//   const len = str.length;
+//   const sum = sumOfNumerals(str);
+//   const minNum = Math.floor(sum / len);
+//   const maxNum = minNum + 1;
+//   const minNumCount = len * maxNum - sum;
+//   const maxNumCount = len - minNumCount;
+//   let balanced = '';
+//   for (let i = 0; i < minNumCount; i += 1) {
+//     balanced += minNum;
+//   }
+//   for (let i = 0; i < maxNumCount; i += 1) {
+//     balanced += maxNum;
+//   }
+//   return balanced;
+// };
 
-const distributePoints = (num, points) => {
-  const len = String(num).length;
-  const minNum = Math.floor(points / len);
-  const maxNum = minNum + 1;
-  const minNumCount = len - (points % len);
-  const maxNumCount = points % len;
-  let balanced = '';
-  for (let i = 0; i < minNumCount; i += 1) {
-    balanced += minNum;
+
+// ver. 2
+const makeString = (numeral, count) => {
+  if (count === 0) {
+    return '';
   }
-  for (let i = 0; i < maxNumCount; i += 1) {
-    balanced += maxNum;
-  }
-  return balanced;
+  return `${numeral}${makeString(numeral, count - 1)}`;
 };
 
-const balanceNum = (num) => {
-  const minNum = findMinNum(num);
-  const base = makeBase(minNum, num.length);
-  const points = calculatePoints(base, num);
-  return distributePoints(num, points);
+const balanceNum = (str) => {
+  const len = str.length;
+  const sum = sumOfNumerals(str);
+  const minNum = Math.floor(sum / len);
+  const maxNum = minNum + 1;
+  const minNumCount = len * maxNum - sum;
+  const maxNumCount = len - minNumCount;
+  const stringOfMinNum = makeString(minNum, minNumCount);
+  const stringOfMaxNum = makeString(maxNum, maxNumCount);
+  return `${stringOfMinNum}${stringOfMaxNum}`;
 };
 
 const minNumber = 10;
