@@ -10,12 +10,12 @@ const findGCD = (a, b) => {
   return a > b ? findGCD(a % b, b) : findGCD(a, b % a);
 };
 
-const rules = 'Find the greatest common divisor of given numbers.';
+const gameRule = 'Find the greatest common divisor of given numbers.';
 
 const minNumber = 1;
 const maxNumber = 99;
 
-const generateConditions = () => {
+const generateCondition = () => {
   const num1 = generateNumber(minNumber, maxNumber);
   const num2 = generateNumber(minNumber, maxNumber);
   const correctAnswer = findGCD(num1, num2);
@@ -23,6 +23,6 @@ const generateConditions = () => {
   return cons(question, String(correctAnswer));
 };
 
-const playGcd = () => playGame(rules, generateConditions);
+const playGcd = () => playGame(gameRule, generateCondition);
 
 export default playGcd;

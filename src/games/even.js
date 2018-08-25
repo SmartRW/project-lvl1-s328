@@ -9,13 +9,13 @@ const gameRule = 'Answer "yes" if number even otherwise answer "no"';
 const minNumber = 1;
 const maxNumber = 99;
 
-const generateConditions = () => {
+const generateCondition = () => {
   const number = generateNumber(minNumber, maxNumber);
   const correctAnswer = isEven(number) ? 'yes' : 'no';
   const question = number;
   return cons(question, correctAnswer);
 };
 
-const playEven = () => playGame(gameRule, generateConditions);
+const playEven = () => playGame(gameRule, generateCondition);
 
 export default playEven;
