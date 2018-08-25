@@ -8,4 +8,22 @@ hexlet frontend-js 1st level project
 
 [![Build Status](https://travis-ci.org/SmartRW/project-lvl1-s328.svg?branch=master)](https://travis-ci.org/SmartRW/project-lvl1-s328)
 
-[![asciicast](https://asciinema.org/a/ayv4pUXiGXEnihaT9pLj0zGIw.png)](https://asciinema.org/a/ayv4pUXiGXEnihaT9pLj0zGIw)
+## Install
+
+[![asciicast](https://asciinema.org/a/ppXDMsWAxndzvoRERQAGe1mCx.png)](https://asciinema.org/a/ppXDMsWAxndzvoRERQAGe1mCx)
+
+## Play Brain Even
+
+[![asciicast](https://asciinema.org/a/zxc9wJkvmvXUlpHSKjgXCYKf0.png)](https://asciinema.org/a/zxc9wJkvmvXUlpHSKjgXCYKf0)
+
+## Play Brain Calc
+
+[![asciicast](https://asciinema.org/a/dvr1oqbzosGGp5ZzoqI62hVrG.png)](https://asciinema.org/a/dvr1oqbzosGGp5ZzoqI62hVrG)
+
+## Play Brain GCD
+
+[![asciicast](https://asciinema.org/a/syCFTqjhgL5iFW7FANcIp9sRg.png)](https://asciinema.org/a/syCFTqjhgL5iFW7FANcIp9sRg)
+
+## Play Brain Balance
+
+[![asciicast](https://asciinema.org/a/Zqh13IY58o9475Iq3MYyDw39w.png)](https://asciinema.org/a/Zqh13IY58o9475Iq3MYyDw39w)
