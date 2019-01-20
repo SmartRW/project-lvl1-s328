@@ -12,7 +12,7 @@
 
 [![asciicast](https://asciinema.org/a/ppXDMsWAxndzvoRERQAGe1mCx.png)](https://asciinema.org/a/ppXDMsWAxndzvoRERQAGe1mCx)
 
-## Run Brain Even
+## Brain Even
 
 run: `brain-even`
 
