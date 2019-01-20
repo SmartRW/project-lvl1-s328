@@ -8,28 +8,42 @@
 
 ## Install
 
+`npm install -g brain-games-rmakarov`
+
 [![asciicast](https://asciinema.org/a/ppXDMsWAxndzvoRERQAGe1mCx.png)](https://asciinema.org/a/ppXDMsWAxndzvoRERQAGe1mCx)
 
-## Play Brain Even
+## Run Brain Even
+
+run: `brain-even`
 
 [![asciicast](https://asciinema.org/a/zxc9wJkvmvXUlpHSKjgXCYKf0.png)](https://asciinema.org/a/zxc9wJkvmvXUlpHSKjgXCYKf0)
 
-## Play Brain Calc
+## Brain Calc
+
+run: `brain-calc`
 
 [![asciicast](https://asciinema.org/a/dvr1oqbzosGGp5ZzoqI62hVrG.png)](https://asciinema.org/a/dvr1oqbzosGGp5ZzoqI62hVrG)
 
-## Play Brain GCD
+## Brain GCD
+
+run: `brain-gcd`
 
 [![asciicast](https://asciinema.org/a/syCFTqjhgL5iFW7FANcIp9sRg.png)](https://asciinema.org/a/syCFTqjhgL5iFW7FANcIp9sRg)
 
-## Play Brain Balance
+##  Brain Balance
+
+run: `brain-balance`
 
 [![asciicast](https://asciinema.org/a/Zqh13IY58o9475Iq3MYyDw39w.png)](https://asciinema.org/a/Zqh13IY58o9475Iq3MYyDw39w)
 
-## Play Brain Progression
+##  Brain Progression
+
+run: `brain-balance`
 
 [![asciicast](https://asciinema.org/a/X5fuc9q6LUGg3Qrhk0U6rcfZZ.png)](https://asciinema.org/a/X5fuc9q6LUGg3Qrhk0U6rcfZZ)
 
-## Play Brain Prime
+##  Brain Prime
+
+run: `brain-prime`
 
 [![asciicast](https://asciinema.org/a/QPh7iWAkG0w1IFoTYUW11iY8R.png)](https://asciinema.org/a/QPh7iWAkG0w1IFoTYUW11iY8R)
