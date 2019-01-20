@@ -6,6 +6,10 @@
 
 [![Build Status](https://travis-ci.org/SmartRW/project-lvl1-s328.svg?branch=master)](https://travis-ci.org/SmartRW/project-lvl1-s328)
 
+## Навыки и технологии
+
++ настройка окружения (npm, babel, eslint)
+
 ## Install
 
 `npm install -g brain-games-rmakarov`
