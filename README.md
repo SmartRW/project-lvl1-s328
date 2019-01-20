@@ -1,6 +1,6 @@
 # project-lvl1-s328
 
-# Консольное приложение, содержащее набор мини-игр с общим движком.
+## Консольное приложение, содержащее набор мини-игр с общим движком.
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/174b390b86ba7fc7793b/maintainability)](https://codeclimate.com/github/SmartRW/project-lvl1-s328/maintainability)
 
