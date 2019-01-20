@@ -1,10 +1,8 @@
 # project-lvl1-s328
 
-hexlet frontend-js 1st level project
+# Консольное приложение, содержащее набор мини-игр с общим движком.
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/174b390b86ba7fc7793b/maintainability)](https://codeclimate.com/github/SmartRW/project-lvl1-s328/maintainability)
-
-Консольное приложение, содержащее набор мини-игр с общим движком.
 
 [![Build Status](https://travis-ci.org/SmartRW/project-lvl1-s328.svg?branch=master)](https://travis-ci.org/SmartRW/project-lvl1-s328)
 
